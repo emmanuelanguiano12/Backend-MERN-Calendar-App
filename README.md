@@ -49,12 +49,18 @@ You can test the app using Postman with the following instructions:
        "notes": "Do exercise"
    }
 
-4. **Get All Events**
+4. **Get All Events By User**
 
    Endpoint: https://backend-mern-calendar-app-production.up.railway.app/api/events (GET)
 
    Headers: 
    - x-token: <your_token>
+
+   Body (raw JSON):
+   {
+    "email": "youremail@google.com",
+    "password": "YourPassword"
+   }
 
 5. **Update an Event**
 
@@ -77,3 +83,9 @@ You can test the app using Postman with the following instructions:
 
    Headers: 
    - x-token: <your_token>
+
+    Body (raw JSON):
+   {
+    "email": "youremail@google.com",
+    "password": "YourPassword"
+   }
