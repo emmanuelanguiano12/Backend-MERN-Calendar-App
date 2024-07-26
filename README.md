@@ -1,7 +1,7 @@
 Deplloy backend: https://backend-mern-calendar-app-production.up.railway.app/
 
-##Auth:
+## Auth:
 /api/auth
 
-##Events:
+## Events:
 /api/events
