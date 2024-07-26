@@ -1,66 +1,79 @@
-Deplloy backend: https://backend-mern-calendar-app-production.up.railway.app/
+# Backend Deployment
+The backend is deployed at: https://backend-mern-calendar-app-production.up.railway.app/
 
-# Auth:
-/api/auth
+## API Endpoints
 
-# Events:
-/api/events
+### Authentication
+Base URL: /api/auth
 
-## You can test the app with the next instructions:
-Sending this in postman:
-https://backend-mern-calendar-app-production.up.railway.app/api/auth/new (post)
+### Events
+Base URL: /api/events
 
-body-raw-json:
-{
-    "name": "Yor Name",
-    "email": "youremail@google.com",
-    "password": "YourPassword"
-}
+## How to Test the App
 
-then https://backend-mern-calendar-app-production.up.railway.app/api/auth to login: (post)
+You can test the app using Postman with the following instructions:
 
-body-raw-json:
-{
-    "email": "youremail@google.com",
-    "password": "YourPassword"
-}
+1. **Register a New User**
 
-then https://backend-mern-calendar-app-production.up.railway.app/api/events: (post)
-You need to put the token brinded in the login in headers with name: x-token
+   Endpoint: https://backend-mern-calendar-app-production.up.railway.app/api/auth/new (POST)
 
-body-raw-json:
-{
-    "title": "Go to the gym",
-    "start": 2, //date to start in JS
-    "end": 100000, //date to end in JS
-    "notes": "Do excercise"
-}
+   Body (raw JSON):
+   {
+       "name": "Your Name",
+       "email": "youremail@google.com",
+       "password": "YourPassword"
+   }
 
-then https://backend-mern-calendar-app-production.up.railway.app/api/events: (get)
-You need to put the token brinded in the login in headers with name: x-token
+2. **Login**
 
-body-raw-json
-{
-    "email": "youremail@google.com",
-    "password": "YourPassword"
-}
+   Endpoint: https://backend-mern-calendar-app-production.up.railway.app/api/auth (POST)
 
-then https://backend-mern-calendar-app-production.up.railway.app/api/events/:idOfTheActivity: (put)
-You need to put the token brinded in the login in headers with name: x-token
+   Body (raw JSON):
+   {
+       "email": "youremail@google.com",
+       "password": "YourPassword"
+   }
 
-body-raw-json
-{
-    "title": "Title Update",
-    "start": 7,
-    "end": 700000,
-    "notes": "Note update"
-}
+3. **Create an Event**
 
-then https://backend-mern-calendar-app-production.up.railway.app/api/events/:idOfTheActivity: (delete)
-You need to put the token brinded in the login in headers with name: x-token
+   Endpoint: https://backend-mern-calendar-app-production.up.railway.app/api/events (POST)
 
-body-raw-json
-{
-    "email": "youremail@google.com",
-    "password": "YourPassword"
-}
+   Headers: 
+   - x-token: <your_token>
+
+   Body (raw JSON):
+   {
+       "title": "Go to the gym",
+       "start": 2, // JS timestamp for start date
+       "end": 100000, // JS timestamp for end date
+       "notes": "Do exercise"
+   }
+
+4. **Get All Events**
+
+   Endpoint: https://backend-mern-calendar-app-production.up.railway.app/api/events (GET)
+
+   Headers: 
+   - x-token: <your_token>
+
+5. **Update an Event**
+
+   Endpoint: https://backend-mern-calendar-app-production.up.railway.app/api/events/:idOfTheActivity (PUT)
+
+   Headers: 
+   - x-token: <your_token>
+
+   Body (raw JSON):
+   {
+       "title": "Title Update",
+       "start": 7, // JS timestamp for start date
+       "end": 700000, // JS timestamp for end date
+       "notes": "Note update"
+   }
+
+6. **Delete an Event**
+
+   Endpoint: https://backend-mern-calendar-app-production.up.railway.app/api/events/:idOfTheActivity (DELETE)
+
+   Headers: 
+   - x-token: <your_token>
