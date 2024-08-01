@@ -1,3 +1,4 @@
+const path = require('path')
 const express = require("express");
 const cors = require("cors")
 const { dbConnection } = require("./database/config");
@@ -18,11 +19,15 @@ app.use(express.json());
 //Rutas
 app.use('/api/auth', require('./routes/auth')); //? todo lo que sea de este archivo se habilita en esa ruta
 
-//TODO: CRUD eventos
+//CRUD eventos
 app.use('/api/events', require('./routes/events')); //? todo lo que sea de este archivo se habilita en esa ruta
 
 //Directorio publico
 app.use(express.static('public'));
+
+app.use('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/index.html'))
+})
 
 //Escuchar peticiones (listeners)
 app.listen(process.env.PORT, () => {
