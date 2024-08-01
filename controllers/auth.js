@@ -94,6 +94,8 @@ const revalidarToken = async(req, res = response) => {
 
     res.json({
         ok: true, //respuesta en page
+        uid,
+        name,
         token
     })
 
