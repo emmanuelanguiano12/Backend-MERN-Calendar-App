@@ -1,5 +1,5 @@
-# Backend Deployment
-The backend is deployed at: https://backend-mern-calendar-app-production.up.railway.app/
+# Deploy
+https://backend-mern-calendar-app-production.up.railway.app/
 
 ## API Endpoints
 
