@@ -1,5 +1,7 @@
-# Backend Deployment
-The backend is deployed at: https://backend-mern-calendar-app-production.up.railway.app/
+# Deploy
+For now, I've used up my free Railway credits. :(
+You can download the project to see the development mode.
+https://backend-mern-calendar-app-production.up.railway.app/
 
 ## API Endpoints
 
